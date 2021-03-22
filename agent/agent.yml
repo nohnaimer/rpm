@@ -1,0 +1,34 @@
+port: 2021
+sentry:
+  dsn: "http://4c25b618f802468ba08f23d6d406e16a@sentry.inside.mts.by/3"
+
+dhcp:
+  enabled: false
+  path:
+    prod: "/etc/dhcp"
+    temp: "/var/spool/agent/dhcp"
+
+smtp:
+  enabled: false
+  path:
+    temp: "/var/spool/agent/smtp"
+    forward: "/etc/postfix/forwards"
+    aliases: "/etc"
+
+squid:
+  enabled: false
+  path:
+    prod: "/etc/squid/levels"
+    temp: "/var/spool/agent/squid"
+
+techmail:
+  enabled: false
+  path:
+    prod: "/etc/postfix"
+    temp: "/var/spool/agent/techmail"
+
+samba:
+  enabled: false
+  path:
+    prod: "/etc/samba"
+    temp: "/var/spool/agent/samba"

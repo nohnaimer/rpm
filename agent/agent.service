@@ -1,0 +1,13 @@
+[Unit]
+Description=Agent config management
+After=local-fs.target network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/agent
+Restart=on-failure
+RestartSec=60
+TimeoutSec=60
+
+[Install]
+WantedBy=default.target
