@@ -55,6 +55,44 @@ $ env GOOS=solaris GOARCH=amd64 go build -v . # Для solaris x86_64
 http://wiki.rosalab.ru/ru/index.php/Сборка_RPM_-_быстрый_старт
 http://ftp.rpm.org/max-rpm/s1-rpm-build-creating-spec-file.html
 ```
+Install rpm-build on RockyLinux 8
+```bash
+~# dnf install rpm-build rpm-build-libs
+```
+Create dir:
+```bash
+~$ mkdir rpmbuild
+~$ cd rpmbuild
+~$ mkdir {BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
+```
+Create tgz, pull into folder agent-0.0.4 - agent.service, agent, agent.yml files
+```bash
+~$ tar -czf agent-0.0.4.tgz agent-0.0.4
+```
+```text
+- rpmbuild
+    - BUILD
+    - BUILDROOT
+    - RPMS
+    - SOURCES
+        - agent
+        - agent-0.0.4.tgz
+        - agent.service
+        - agent.yml
+    - SPECS
+        - agent.spec
+    - SRPMS
+```
+```bash
+~$ touch ~/rpmbuild/SOURCES/dhcpd.conf.head
+~$ touch ~/rpmbuild/SOURCES/dhcpd.conf.recv
+~$ touch ~/rpmbuild/SOURCES/smb.conf.head
+~$ touch ~/rpmbuild/SOURCES/smb.conf.recv
+```
+Run command:
+```bash
+~$ rpmbuild -bb ~/rpmbuild/SPECS/agent.spec
+```
 # Создание архива tgz
 ```bash
 $ tar -czf agent-0.0.3.tgz agent-0.0.3
