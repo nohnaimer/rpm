@@ -1,5 +1,5 @@
 Name:     agent
-Version:  0.0.4
+Version:  0.0.5
 Release:  1
 Summary:  The HTTP api Agent
 License:  GPLv3+
@@ -66,6 +66,8 @@ fi
 %clean
 
 %changelog
+* Thu Sep 23 2021 ma@mts.by 0.0.5
+- Bug fix snapshot backup method. 8fd86de
 * Thu Sep 22 2021 ma@mts.by 0.0.4
 - Add zfs snapshot backup method. Code refactor. 20cb181
 * Thu Mar 19 2021 ma@mts.by 0.0.3
